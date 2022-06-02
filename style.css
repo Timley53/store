@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: minmax(40px,auto);
+    margin: 5px;
+
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    border: rgba(128, 128, 128, 0.39) 1px solid ;
+}
+
+.header h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 4px 4px 1px rgba(128, 128, 128, 0.39);
+}
+
+.nav{
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgba(255, 0, 0, 0.233);
+    border-radius: 10px;
+}
+
+.nav h2{
+    color: rgb(91, 27, 151);
+    font-size: 1.6rem;
+    margin-left: 40px;
+    align-items: center;
+}
+.nav-link{
+    /* background-color: red; */
+    width: 350px;
+    height: 20px;
+    padding: 10px;
+    
+    
+    position: relative;
+    color: blue;
+}
+.nav-link>a{
+    padding: 5px;
+    text-decoration: none;
+}
+
+.nav-link>a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.nav-link .profile{
+    /* background-color: black; */
+    position: relative;
+    
+}
+
+.profile .drop {
+    display: none;
+    position: absolute;
+    margin-left: 190px;
+}
+
+.profile .drop a{
+    display: block;
+    padding: 10px;
+    background-color: rgba(0, 255, 255, 0.479);
+    text-decoration: none;
+}
+
+.profile .drop a:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+.profile:hover .drop{
+    display: block;
+}

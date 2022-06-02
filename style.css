@@ -87,3 +87,75 @@ body{
 .profile:hover .drop{
     display: block;
 }
+
+.search{
+    margin-top: 10px;
+    background-color: aliceblue;
+    width: 290px;
+    border-radius: 10px;
+}
+.search input{
+    margin: 0;
+    padding: 3px;
+    padding-left: 27px;
+    border: none;
+    height: 20px;
+    width: 200px;
+    background: url('./images/icons8-search-24.png');
+    background-repeat: no-repeat;
+    background-color: aliceblue;
+    background-position: 2px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+input:focus{
+    border: 1px solid white;
+    background-color: grey;
+    color: antiquewhite;
+}
+.search button{
+    border: none;
+    height: 25px;
+    margin-left: 0;
+    background-color: rgba(128, 128, 128, 0.541);
+    border-radius: 10px;
+    margin-right: 0;
+    right: 0;
+
+}
+.search button:hover{
+    background-color: rgba(0, 0, 0, 0.527);
+    color: white;
+}
+.search input:focus-v{
+    border: none;
+}
+.content{
+    height: 380px;
+    /* background-color: aqua; */
+    display: flex;
+
+}
+
+.content .leftscroll{
+    height: 70%;
+    width: 20%;
+    /* background-color: black; */
+    overflow-y: scroll;
+    text-align: center;
+} 
+
+
+.content .leftscroll a{
+    display: block;
+    background-color: antiquewhite;
+    padding: 10px;
+    text-decoration: none;
+    
+}
+
+.leftscroll a:hover{
+    background-color:rgba(255, 0, 0, 0.233) ;
+    border-radius: 10px;
+    
+}

@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css">
-    <title>Kick store</title>
 
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css">
+
+    <title>Kick store</title>
 </head>
 <body>
     <div class="container">
         <div class="grid-item-1 header">
-            <h1>Kick & Lifestyle</h1>
+            <h1>Kicks & Lifestyle</h1>
         </div>
         <div class="grid-item-2 nav">
             <h2>Welcome</h2>
+            <div class="search">
+                <input type="text" placeholder="search"><button>search</button>
+            </div>
             <div class="nav-link">
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -24,31 +29,33 @@
                     Profile 
                     <i class="fa-solid fa-caret-down"></i>
                     <div class="drop">
-                        <a href="#">account</a>
-                        <a href="#">settings</a>
-                        <a href="#">log-out</a>
+                        <a href="#">Account</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Log-out</a>
                     </div>
                 </span>
-                <div class="search">
-                <input type="text" placeholder="search"><button>search</button></div>
+               
                 
             </div>
         </div>
 
-        <div class="grid-item-3 content">
-            <div class="leftscroll">
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-<a href="#">Appliances</a>
-            </div>
-            <div class="product">
+        <div class="grid-item-3 Auto-scroll">
+<marquee behavior="scroll" width="85%" direction="left">All orders for the week to begin shipping by friday,verify delivery details once again,to avoid order mix-up or delay!!!</marquee>
+        </div>
 
-            </div>
+        <div class="grid-item-4">
+            <h3>Filter</h3>
+            <form action="get">
+               <h4>Sex</h4>
+               <label for="male">Male</label>
+               <input type="radio" name="sex" id="male">
+               <label for="female">Female</label>
+               <input type="radio" name="sex" id="female">
+
+            </form>
+
+        </div>
+        <div class="grid-item-5">
 
         </div>
 

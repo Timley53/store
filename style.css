@@ -286,7 +286,7 @@ background-color: rgba(19, 189, 19, 0.801);
 }
 
 
-@media screen and (max-width:414px)
+@media screen and (max-width:714px)
 {
     .container{
         max-width: 100%;

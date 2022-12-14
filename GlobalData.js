@@ -57,10 +57,18 @@ function displayProducts(product, element) {
 
 function clickEachProducts(element) {
   element?.addEventListener("click", function (e) {
+    if (
+      e.target.classList.contains("product-card") ||
+      e.target.classList.contains("categories-container")
+    ) {
+      return;
+    }
+
     if (e.target.closest(".cart")?.classList.contains("cart")) {
       console.log(e.target);
       return;
     }
+
     if (
       e.target?.closest(".product-card").classList?.contains("product-card")
     ) {

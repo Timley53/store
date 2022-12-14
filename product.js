@@ -37,6 +37,9 @@ function displayP(data) {
   ProductDescription.textContent = data?.description;
   ProductPrice.textContent = formatted(data?.price);
 }
+//
+///////
+///////////
 async function fetchClickedProducts() {
   try {
     const res = await fetch(`https://dummyjson.com/products/${clickProducts}`);

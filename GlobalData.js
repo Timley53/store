@@ -11,7 +11,11 @@ let clickProducts;
 let cartlist = [];
 
 cartlist = JSON.parse(localStorage.getItem("cartlist"));
+if (!cartlist) {
+  cartlist = [];
+}
 
+console.log(cartlist);
 //
 //
 menuBar.addEventListener("click", function () {
@@ -72,16 +76,18 @@ function clickEachProducts(element) {
     }
 
     if (e.target.closest(".cart")?.classList.contains("cart")) {
+      // console.log(e.target);
       const cartItemNo = {
         id: e.target.closest(".product-card").getAttribute("data-id"),
         quantity: 1,
+
         price: +e.target
           .closest(".product-card")
           .querySelector(".price")
           .textContent.slice(1, length - 3)
           .replace(",", ""),
       };
-
+      console.log(cartlist);
       cartlist.push(cartItemNo);
       localStorage.setItem("cartlist", JSON.stringify(cartlist));
       console.log(cartlist);

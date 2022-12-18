@@ -8,6 +8,10 @@ const body = document.querySelector("body");
 // //
 let clickProducts;
 
+let cartlist = [];
+
+cartlist = JSON.parse(localStorage.getItem("cartlist"));
+
 //
 //
 menuBar.addEventListener("click", function () {
@@ -26,6 +30,7 @@ const formatted = Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 }).format;
+///
 
 function displayProducts(product, element) {
   const html = `
@@ -59,18 +64,36 @@ function clickEachProducts(element) {
   element?.addEventListener("click", function (e) {
     if (
       e.target.classList.contains("product-card") ||
-      e.target.classList.contains("categories-container")
+      e.target.classList.contains("categories-container") ||
+      e.target.classList.contains("products") ||
+      e.target.classList.contains("category-display")
     ) {
       return;
     }
 
     if (e.target.closest(".cart")?.classList.contains("cart")) {
-      console.log(e.target);
+      const cartItemNo = {
+        id: e.target.closest(".product-card").getAttribute("data-id"),
+        quantity: 1,
+        price: +e.target
+          .closest(".product-card")
+          .querySelector(".price")
+          .textContent.slice(1, length - 3)
+          .replace(",", ""),
+      };
+
+      cartlist.push(cartItemNo);
+      localStorage.setItem("cartlist", JSON.stringify(cartlist));
+      console.log(cartlist);
       return;
     }
 
+    // if () {
+    //   return;
+    // }
+
     if (
-      e.target?.closest(".product-card").classList?.contains("product-card")
+      e.target?.closest(".product-card")?.classList?.contains("product-card")
     ) {
       clickProducts = e.target.closest(".product-card").getAttribute("data-id");
 
@@ -80,3 +103,21 @@ function clickEachProducts(element) {
     }
   });
 }
+
+async function getCartProduct(no) {
+  try {
+    const res = await fetch(`https://dummyjson.com/products/${no}`);
+    if (!res.ok) {
+      throw new Error(`Something went wrong${(await res).status}, try again`);
+    }
+
+    const cartProduct = await res.json();
+
+    await cartlist.push(cartProduct);
+  } catch (err) {
+  } finally {
+    // console.log(await cartlist);
+  }
+}
+
+console.log("timmy,t".replace(",", "").replace("+", ""));

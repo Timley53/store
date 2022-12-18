@@ -27,11 +27,11 @@
           <li class="nav-list">
             <a href="#" class="active" id="active">Shop</a>
           </li>
-          <li class="nav-list"><a href="#">Blog</a></li>
+          <li class="nav-list"><a href="./blog.html">Blog</a></li>
           <li class="nav-list"><a href="#">About</a></li>
           <li class="nav-list"><a href="#">Contact</a></li>
           <li class="nav-list">
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
         </ul>
 
@@ -40,6 +40,22 @@
         </button>
       </nav>
       <header class="header" id="top">
+        <div class="search-products">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search Products"
+          />
+          <button class="search-btn">Search</button>
+        </div>
+
+        <div class="search-result-box none">
+          <h2>Search results</h2>
+          <p class="result-found"></p>
+
+          <div class="search-results"></div>
+        </div>
+
         <button class="links"><</button>
         <div class="categories-crumbs">
           <a href="#top">top</a>
@@ -166,14 +182,6 @@
           <h2>mens-watches</h2>
 
           <div class="mens-watches categories-container" id="mens-watches">
-            <div class="categories-overlay">
-              <div class="spiner"></div>
-            </div>
-          </div>
-
-          <h2>mens-shirt</h2>
-
-          <div class="mens-shirt categories-container" id="mens-shirt">
             <div class="categories-overlay">
               <div class="spiner"></div>
             </div>

@@ -77,20 +77,21 @@ async function getHomeProducts() {
 }
 getHomeProducts();
 
-featured?.addEventListener("click", function (e) {
-  if (e.target.closest(".cart")?.classList.contains("cart")) {
-    console.log(e.target);
-    return;
-  }
-  if (e.target?.closest(".product-card").classList?.contains("product-card")) {
-    clickProducts = e.target.closest(".product-card").getAttribute("data-id");
+// featured?.addEventListener("click", function (e) {
+//   if (e.target.closest(".cart")?.classList.contains("cart")) {
+//     console.log(e.target);
+//     return;
+//   }
+//   if (e.target?.closest(".product-card").classList?.contains("product-card")) {
+//     clickProducts = e.target.closest(".product-card").getAttribute("data-id");
 
-    localStorage.setItem("productid", JSON.stringify(clickProducts));
+//     localStorage.setItem("productid", JSON.stringify(clickProducts));
 
-    window.location = "product.html";
-  }
-  //   if()
-});
+//     window.location = "product.html";
+//   }
+//   //   if()
+// });
+clickEachProducts(featured);
 clickEachProducts(newArrivals);
 // (e.target.classList.contains("product-card") &&
 //   !e.target.classList.contains(".cart")) ||

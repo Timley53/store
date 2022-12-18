@@ -102,6 +102,43 @@ nav .nav-list a::after {
   padding: 1rem;
   height: auto;
 }
+.search-products {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.search-input {
+  padding: 0.5rem 2rem;
+  width: 30%;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border: 2px solid #38761d;
+}
+.search-btn {
+  padding: 0.5rem 2rem;
+  background-color: #38761d;
+  border: 2px solid #38761d;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.search-btn:hover {
+  border: 2px solid #38761d;
+  background-color: transparent;
+  color: #38761d;
+}
+.search-results {
+  width: 100%;
+  margin: 2rem 0;
+  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 1rem;
+}
 .links {
   position: fixed;
   right: 0.5rem;
@@ -132,7 +169,7 @@ nav .nav-list a::after {
 }
 .categories-container {
   width: 90%;
-  height: auto;
+  min-height: 200px;
   border: 1px solid #38761d;
   margin: 1rem;
   padding: 0.5rem;
@@ -155,7 +192,7 @@ nav .nav-list a::after {
   justify-content: center;
   left: 0;
   transition: all 1s;
-  display: none;
+  /* display: none; */
 }
 .spiner {
   position: static;
@@ -473,7 +510,7 @@ footer {
   }
   .categories-container {
     width: 95%;
-    height: auto;
+    min-height: 200px;
     border: 1px solid #38761d;
     margin: 1rem 0;
     padding: 0.5rem;

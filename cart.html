@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="./GlobalData.js"></script>
+    <script defer src="./cart.js"></script>
+    <title>Products</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">Timley</div>
+        <ul class="nav-lists">
+          <li class="nav-list">
+            <a href="./index.html" class="active" id="">Home</a>
+          </li>
+          <li class="nav-list">
+            <a href="./shop.html">Shop</a>
+          </li>
+          <li class="nav-list"><a href="./blog.html">Blog</a></li>
+          <li class="nav-list"><a href="">About</a></li>
+          <li class="nav-list"><a href="#">Contact</a></li>
+          <li class="nav-list">
+            <a href="#" class="active" id="active"
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </li>
+        </ul>
+
+        <button class="menu mobile-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+      <header class="header">
+        <div class="coupon">
+          <h1>#cart</h1>
+          <p>Add your coupon code & SAVE upto 70%</p>
+        </div>
+      </header>
+      <div class="cart-container">
+        <div class="cart-div">
+          <div class="table-heading">
+            <div class="product-delete head">Remove</div>
+            <div class="product-img head">Images</div>
+            <div class="productname head">Name</div>
+            <div class="product-price head">Price</div>
+            <div class="product-quantity head">Quantity</div>
+            <div class="product-subtotal head">Subtotal</div>
+          </div>
+        </div>
+
+        <div class="cart-div cart-table"></div>
+      </div>
+
+      <div class="cart-total">
+        <div class="cart-total-head">
+          <div class="cart-qantity-head">Cart Quantity</div>
+          <div class="cart-total-amount-head">Cart Total Amount</div>
+        </div>
+
+        <div class="cart-value">
+          <div class="cart-quantity-value value"></div>
+          <div class="cart-total-value value"></div>
+        </div>
+
+        <div class="buy-cart">
+          <button class="buy-cart-btn">Buy cart</button>
+        </div>
+      </div>
+      <!-- 
+
+
+         -->
+      <!-- <div class="table-row">
+          <div class="product-delete col">
+            <button class="delete"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="cart-item-img col">
+            <img src="./images/TImley-removebg-preview.png" alt="" />
+          </div>
+          <div class="cart-item-name col">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+            quasi.
+          </div>
+          <div class="cart-item-price col">Price</div>
+          <div class="cart-item-quantity col">
+            <input
+              type="number"
+              name="quantity"
+              id="cart-price-input"
+              class="cart-price-input"
+              value="1"
+              min="1"
+            />
+          </div>
+          <div class="cart-item-subtotal col">Subtotal</div>
+        </div> -->
+
+      <div class="overlay none"></div>
+    </div>
+  </body>
+</html>

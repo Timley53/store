@@ -102,7 +102,7 @@ nav .nav-list a::after {
 }
 .product-header {
   margin-top: 5.5rem;
-  width: 70%;
+  width: 80%;
   height: 80vh;
   border: 1px solid saddlebrown;
   border-radius: 1rem;
@@ -138,6 +138,7 @@ nav .nav-list a::after {
   justify-content: center;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.758);
+  display: none;
 }
 .await-product2 {
   position: absolute;
@@ -211,7 +212,7 @@ nav .nav-list a::after {
   margin-top: 2rem;
 }
 .img-lists img {
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   width: 30%;
   height: 100%;
   border: 1px solid black;
@@ -313,8 +314,8 @@ nav .nav-list a::after {
   overflow-x: scroll;
   position: relative;
   border-radius: 1rem;
-  box-shadow: 0 0 7px rgba(128, 128, 128, 0.436);
-  outline: 1px solid rgba(128, 128, 128, 0.436);
+  /* box-shadow: 0 0 7px rgba(128, 128, 128, 0.436); */
+  /* outline: 1px solid rgba(128, 128, 128, 0.436); */
   outline-offset: 0.5rem;
 
   /* flex-wrap: wrap; */
@@ -417,6 +418,23 @@ nav .nav-list a::after {
   color: white;
   outline: 0.5rem solid rgba(0, 0, 0, 0.728);
 }
+
+.cart-added {
+  position: fixed;
+  bottom: 3rem;
+  z-index: 100;
+  background-color: #38761d;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  transform: translateY(200%);
+  transition: all 1s;
+}
+
+.cart-translate {
+  transform: translateY(0);
+}
+
 footer {
   display: flex;
   /* flex-wrap: wrap; */
@@ -594,7 +612,7 @@ footer {
   }
   .product-img-display {
     width: 90%;
-    min-height: 70vh;
+    min-height: 65vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -603,7 +621,7 @@ footer {
   .product-img-display .img-1 {
     width: 95%;
     height: 40vh;
-    border: 1px dashed green;
+    /* border: 1px dashed green; */
     border-radius: 1rem;
     width: 90%;
   }
@@ -617,7 +635,7 @@ footer {
     margin-top: 2rem;
   }
   .img-lists img {
-    border-radius: 50%;
+    border-radius: 5%;
     width: 30%;
     height: 100%;
     border: 1px solid black;
@@ -660,17 +678,24 @@ footer {
     align-items: center;
   }
   .cart {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
     height: 30px;
     width: 30px;
     background-color: rgba(94, 138, 109, 0.263);
     border-radius: 50%;
     border: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
+    outline: none;
+    padding: 0.3rem;
     outline: 0.5rem solid rgba(94, 138, 109, 0.283);
+
     color: black;
     cursor: pointer;
   }
+
   .cart:hover {
     background-color: rgba(0, 0, 0, 0.728);
     color: white;
@@ -694,7 +719,7 @@ footer {
   .category-display {
     width: 85%;
     height: 60vh;
-    border: 1px solid #38761d;
+    /* border: 1px solid #38761d; */
     margin: 0.8rem;
     display: flex;
     justify-content: space-between;

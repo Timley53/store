@@ -12,7 +12,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script defer src="./GlobalData.js"></script>
+    <script src="E-storeGlobal.js" defer></script>
+    <!-- <script defer src="./GlobalData.js"></script> -->
     <script defer src="./product.js"></script>
     <title>Products</title>
   </head>
@@ -61,30 +62,54 @@
          -->
 
         <div class="product-details-display">
-          <div class="Product-d-title">iPhone 12 Gold chromium 256gb</div>
-          <div class="Product-d-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugit
-            facere commodi accusantium dolore voluptatum natus alias iure
-            ducimus excepturi quo assumenda, ut ipsum similique suscipit impedit
-            reiciendis totam eius.
+          <div class="product-title">
+            <p>Product Name:</p>
+            <div class="Product-d-title">iPhone 12 Gold chromium 256gb</div>
           </div>
 
-          <div class="ratings">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-            ><i class="fa-solid fa-star"></i>
+          <div class="product-description">
+            <b>Product Description:</b>
+
+            <div class="Product-d-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugit
+              facere commodi accusantium dolore voluptatum natus alias iure
+              ducimus excepturi quo assumenda, ut ipsum similique suscipit
+              impedit reiciendis totam eius.
+            </div>
           </div>
 
-          <div class="Product-d-price">$1,250</div>
+          <div class="product-ratings">
+            <b>Ratings:</b>
+            <br />
 
-          <input
-            type="number"
-            name="quantity"
-            id="quantity"
-            class="quantity"
-            placeholder="Quantity"
-            min="0"
-          />
+            <div class="ratings">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+
+          <br />
+          <div class="product-price">
+            <b>Product price:</b>
+
+            <div class="Product-d-price">$1,250</div>
+          </div>
+
+          <div class="Product-quantity">
+            <b>Product quantity:</b>
+            <br />
+
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              class="quantity"
+              placeholder="Quantity"
+              min="0"
+              value="1"
+            />
+          </div>
 
           <div class="cart-buy-now">
             <button class="cart">
@@ -94,6 +119,8 @@
           </div>
         </div>
       </header>
+
+      <div class="cart-added">Product added🛒✅</div>
 
       <h4>Might also be interested in</h4>
 

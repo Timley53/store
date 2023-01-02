@@ -1,10 +1,10 @@
 "strict mode";
-const iMgcont = document.querySelector(".js");
-const featured = document.querySelector(".featured");
-const failedFetch = document.querySelector(".failed-fetch");
-const awaitProduct = document.querySelector(".await-product");
-const newArrivals = document.querySelector(".new-arrivals");
-
+// const iMgcont = document.querySelector(".js");
+// const featured = document.querySelector(".featured");
+// const failedFetch = document.querySelector(".failed-fetch");
+// const newArrivals = document.querySelector(".new-arrivals");
+// const awaitProduct = document.querySelector(".await-product");
+// Important😡😡😡😡😡
 /*
 
 
@@ -59,23 +59,25 @@ async function getHomeProducts() {
     //
     //
     Products6.forEach((product) => {
-      displayProducts(product, featured);
+      obj.displayProducts(product, featured);
     });
     ProductsBack6.forEach((product) => {
-      displayProducts(product, newArrivals);
+      obj.displayProducts(product, newArrivals);
     });
 
     console.log(Products6);
     console.log(ProductsBack6);
   } catch (err) {
     console.log(err);
-    failedFetch.textContent = err;
-    failedFetch?.classList.toggle("none");
+    failedFetch.textContent = `${err}, reload`;
+    failedFetch?.classList.remove("none");
   } finally {
     awaitProduct?.classList.toggle("none");
   }
 }
-getHomeProducts();
+
+// diplayHomeProducts();
+getHomeProducts(); ///Important😡😡😡😡😡
 
 // featured?.addEventListener("click", function (e) {
 //   if (e.target.closest(".cart")?.classList.contains("cart")) {
@@ -91,8 +93,11 @@ getHomeProducts();
 //   }
 //   //   if()
 // });
-clickEachProducts(featured);
-clickEachProducts(newArrivals);
+
+// clickEachProducts(featured); Important😡😡😡😡😡
+
+// clickEachProducts(newArrivals); Important😡😡😡😡😡
+
 // (e.target.classList.contains("product-card") &&
 //   !e.target.classList.contains(".cart")) ||
 // (e.target.closest(".product-card").classList.contains("product-card") &&

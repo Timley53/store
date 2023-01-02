@@ -95,12 +95,32 @@ nav .nav-list a::after {
   background-color: #38761d;
   /* width: 100%; */
 }
+.cart-added {
+  position: fixed;
+  bottom: 3rem;
+  z-index: 100;
+  background-color: #38761d;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  transform: translateY(200%);
+  transition: all 1s;
+}
+
+.cart-translate {
+  transform: translateY(0);
+}
 .header {
   margin-top: 8rem;
   /* border: 1px solid blue; */
   width: 90%;
   padding: 1rem;
   height: auto;
+}
+.search-spiner {
+  align-self: center;
+  margin: auto auto;
+  margin-top: 1rem;
 }
 .search-products {
   width: 100%;
@@ -579,7 +599,7 @@ footer {
     font-size: 1rem;
     font-weight: 500;
   }
-  .product-card .cart {
+  /* .product-card .cart {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -593,7 +613,27 @@ footer {
     outline: 0.5rem solid rgba(94, 138, 109, 0.283);
     color: black;
     cursor: pointer;
+  } */
+
+  .product-card .cart {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(94, 138, 109, 0.263);
+    border-radius: 50%;
+    border: none;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    padding: 0.3rem;
+    outline: 0.5rem solid rgba(94, 138, 109, 0.283);
+
+    color: black;
+    cursor: pointer;
   }
+
   .product-card .cart:hover {
     background-color: rgba(0, 0, 0, 0.728);
     color: white;

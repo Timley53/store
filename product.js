@@ -1,4 +1,5 @@
 "strict mode";
+
 const productImg1 = document.querySelector(".img-1");
 const productListImg1 = document.querySelector(".img-list-1");
 const productListImg2 = document.querySelector(".img-list-2");
@@ -7,21 +8,24 @@ const ProductTitle = document.querySelector(".Product-d-title");
 const ProductDescription = document.querySelector(".Product-d-description");
 const ProductPrice = document.querySelector(".Product-d-price");
 const productHeader = document.querySelector(".product-header");
+const imgList = document.querySelectorAll(".img-lists img");
+const failedFetch2 = document.querySelector(".failed-fetch2");
+const awaitProduct2 = document.querySelector(".await-product2");
 const categoryDisplay = document.querySelector(".category-display");
+const addProCart = document.querySelector(".cart");
+const prQuantity = document.querySelector(".quantity");
+// const awaitProduct = document.querySelector(".await-product");
+/*
 const rightBtn = document.querySelector(".right-btn");
 const leftBtn = document.querySelector(".left-btn");
 const failedFetch = document.querySelector(".failed-fetch");
-const awaitProduct = document.querySelector(".await-product");
-const failedFetch2 = document.querySelector(".failed-fetch2");
-const awaitProduct2 = document.querySelector(".await-product2");
 const spiner = document.querySelector(".spiner");
-const imgList = document.querySelectorAll(".img-lists img");
 
 ///////////////////////
 /////
 
 ///////////////////////////////////
-
+console.log(memory);
 //
 let productCategory;
 clickProducts = JSON.parse(localStorage.getItem("productid"));
@@ -106,3 +110,47 @@ clickEachProducts(categoryDisplay);
 //   });
 // console.log(clickProducts);
 // console.log(productCategory);
+
+*/
+
+function displayP(data) {
+  console.log(data);
+  productImg1.src = data?.images?.[0];
+  productListImg1.src = data?.images?.[0];
+  productListImg2.src = data?.images?.[1];
+  productListImg3.src = data?.images?.[2];
+  ProductTitle.textContent = data?.title;
+  ProductDescription.textContent = data?.description;
+  ProductPrice.textContent = formatted(data?.price);
+  prQuantity.value = 1;
+}
+
+console.log(memory);
+const product = obj.findProducts(memory.clickedProductsId);
+
+// product.qantity =
+
+console.log(product);
+// console.log(product.price);
+displayP(product);
+imgList.forEach((img) => {
+  img.addEventListener("click", function () {
+    productImg1.src = img.src;
+  });
+
+  // console.log(img);
+});
+
+obj.otherCategories(product, memory, categoryDisplay);
+
+setTimeout(() => {
+  awaitProduct.classList.add("none");
+  awaitProduct2.classList.add("none");
+}, 1500);
+
+obj.clickedProduct(categoryDisplay);
+
+addProCart.addEventListener("click", function (e) {
+  obj.addToCart(memory.clickedProductsId, product.price, +prQuantity.value);
+  console.log("add");
+});

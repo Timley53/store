@@ -131,7 +131,7 @@ nav .nav-list a::after {
 .cart-div {
   width: 90%;
   min-height: 30px;
-  border: 1px solid #38761d;
+  /* border: 1px solid #38761d; */
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -150,7 +150,7 @@ nav .nav-list a::after {
   justify-content: center;
   font-weight: 500;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 0.2rem;
 }
 .product-img {
@@ -158,12 +158,16 @@ nav .nav-list a::after {
 }
 .table-row {
   display: flex;
+  background-color: rgba(137, 43, 226, 0.374);
+  backdrop-filter: blur(5px);
+  border-radius: 0.7rem;
+  margin: 0.4rem 0;
 }
 .col {
   width: 25%;
   min-height: 40px;
   max-height: 60px;
-  border: 1px solid blueviolet;
+  /* border: 1px solid blueviolet; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +190,7 @@ nav .nav-list a::after {
   padding: 0.3rem 0.5rem;
   border-radius: 0.3rem;
   border: none;
-  background-color: crimson;
+  background-color: rgba(220, 20, 60, 0.803);
   color: white;
   cursor: pointer;
 }
@@ -200,16 +204,19 @@ nav .nav-list a::after {
   width: 300px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #38761d;
+  /* border: 1px solid #38761d; */
   align-items: center;
   padding: 0.5rem;
+  border-radius: 0.8rem;
+  background-color: rgba(137, 43, 226, 0.374);
+  backdrop-filter: blur(5px);
 }
 .cart-total-head {
   width: 100%;
-
+  font-size: 1rem;
   display: flex;
-  border-bottom: 1px solid #38761d;
-  /* margin: 2rem; */
+  /* border-bottom: 1px solid #38761d; */
+  padding: 0.5rem;
 }
 .cart-total-head div {
   width: 50%;
@@ -220,11 +227,12 @@ nav .nav-list a::after {
   display: flex;
   width: 90%;
   padding: 0.6rem;
-  border-bottom: 1px solid #38761d;
+  border-bottom: 1px solid white;
 }
 .value {
   width: 50%;
   text-align: center;
+  font-weight: 600;
 }
 .buy-cart {
   align-self: flex-end;
@@ -243,6 +251,37 @@ nav .nav-list a::after {
   border: 1px solid #38761d;
   color: #38761d;
 }
+
+/* 
+
+*/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
+  padding: 1rem;
+  border-top: 3rem solid rgb(13, 13, 58);
+}
+.fot-col {
+  width: 30%;
+}
+.fot-col-1 {
+  width: 50%;
+}
+.fot-col-1 img {
+  width: 40%;
+}
+.fot-col a {
+  display: block;
+  margin: 1rem 0;
+  color: black;
+  text-decoration: none;
+}
+.fot-col a:hover {
+  text-decoration: underline;
+}
+
 .mobile-none {
   display: none;
 }
@@ -453,7 +492,7 @@ nav .nav-list a::after {
   .col {
     width: 20%;
     min-height: 40px;
-    border: 1px solid #38761d;
+    /* border: 1px solid #38761d; */
     display: flex;
     align-items: center;
     justify-content: center;

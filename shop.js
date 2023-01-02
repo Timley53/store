@@ -28,9 +28,9 @@ const searchResults = document.querySelector(".search-results");
 const searchResultBox = document.querySelector(".search-result-box");
 const searchBtn = document.querySelector(".search-btn");
 const resultFound = document.querySelector(".result-found");
+const searchSpiner = document.querySelector(".search-spiner");
 
-let allProducts;
-
+// console.log(obj.allProducts);
 //
 
 ////////
@@ -43,22 +43,40 @@ linksBtn.addEventListener("click", function () {
   categoriesCrumbs.classList.toggle("crumbs-translate");
 });
 
-async function loadProducts(element, divBox) {
+async function loadProducts() {
   try {
-    const res = await fetch(
-      `https://dummyjson.com/products/category/${element}`
-    );
+    const res = await fetch("https://dummyjson.com/products?limit=100&skip=0");
     if (!res.ok) {
       throw new Error(`Something went wrong ${res.status}`);
     }
     const data = await res.json();
-    // console.log(data);
-    data.products.forEach((product) => {
-      displayProducts(product, divBox);
-    });
+    console.log(data);
+
+    findEachCate(data.products, "tops", tops);
+    findEachCate(data.products, "smartphones", smartphones);
+    findEachCate(data.products, "fragrances", fragrances);
+    findEachCate(data.products, "fragrances", fragrances);
+    findEachCate(data.products, "laptops", laptops);
+    findEachCate(data.products, "skincare", skincare);
+    findEachCate(data.products, "groceries", groceries);
+    findEachCate(data.products, "furniture", furniture);
+    findEachCate(data.products, "sunglasses", sunglasses);
+    findEachCate(data.products, "automotive", automotive);
+    findEachCate(data.products, "motorcycle", motorcycle);
+    findEachCate(data.products, "lighting", lighting);
+    findEachCate(data.products, "home-decoration", homeDecoration);
+    findEachCate(data.products, "womens-dresses", womensDresses);
+    findEachCate(data.products, "womens-shoes", womensShoes);
+    findEachCate(data.products, "mens-shoes", mensShoes);
+    findEachCate(data.products, "mens-watches", mensWatches);
+    findEachCate(data.products, "mens-shirts", mensShirt);
+    findEachCate(data.products, "womens-watches", womensWatches);
+    findEachCate(data.products, "womens-bags", womensBags);
+    findEachCate(data.products, "womens-jewellery", womensJewellery);
+
     // displayProducts(product, element);
   } catch (err) {
-    header.textContent = err;
+    header.textContent = `${err}, reload`;
     header.style.textAlign = "center";
   } finally {
     categoriesoverlay.forEach((over) => {
@@ -67,29 +85,39 @@ async function loadProducts(element, divBox) {
   }
 }
 
-loadProducts("tops", tops);
-loadProducts("smartphones", smartphones);
-loadProducts("fragrances", fragrances);
-loadProducts("laptops", laptops);
-loadProducts("skincare", skincare);
-loadProducts("groceries", groceries);
-loadProducts("furniture", furniture);
-loadProducts("sunglasses", sunglasses);
-loadProducts("automotive", automotive);
-loadProducts("motorcycle", motorcycle);
-loadProducts("lighting", lighting);
-loadProducts("home-decoration", homeDecoration);
-loadProducts("womens-dresses", womensDresses);
-loadProducts("womens-shoes", womensShoes);
-loadProducts("mens-shoes", mensShoes);
-loadProducts("mens-watches", mensWatches);
-loadProducts("mens-shirts", mensShirt);
-loadProducts("womens-watches", womensWatches);
-loadProducts("womens-bags", womensBags);
-loadProducts("womens-jewellery", womensJewellery);
+function findEachCate(arr, categoryStr, divBox) {
+  const filtedArr = arr.filter((pr) => pr.category === categoryStr);
+
+  filtedArr.forEach((pr) => {
+    obj.displayProducts(pr, divBox);
+  });
+}
+
+loadProducts();
+
+// loadProducts("tops", tops);
+// loadProducts("smartphones", smartphones);
+// loadProducts("fragrances", fragrances);
+// loadProducts("laptops", laptops);
+// loadProducts("skincare", skincare);
+// loadProducts("groceries", groceries);
+// loadProducts("furniture", furniture);
+// loadProducts("sunglasses", sunglasses);
+// loadProducts("automotive", automotive);
+// loadProducts("motorcycle", motorcycle);
+// loadProducts("lighting", lighting);
+// loadProducts("home-decoration", homeDecoration);
+// loadProducts("womens-dresses", womensDresses);
+// loadProducts("womens-shoes", womensShoes);
+// loadProducts("mens-shoes", mensShoes);
+// loadProducts("mens-watches", mensWatches);
+// loadProducts("mens-shirts", mensShirt);
+// loadProducts("womens-watches", womensWatches);
+// loadProducts("womens-bags", womensBags);
+// loadProducts("womens-jewellery", womensJewellery);
 
 categoriesContainer.forEach((cont) => {
-  clickEachProducts(cont);
+  obj.clickedProduct(cont);
 });
 // [
 //   ("fragrances",
@@ -125,28 +153,8 @@ searchBtn.addEventListener("click", function (e) {
   if (!searchInput.value) return;
   if (searchInput.value) {
     console.log(allProducts);
-
-    const searchList = allProducts.filter((pr) => {
-      return searchIt(
-        searchInput.value.toLocaleLowerCase(),
-        pr.title.toLocaleLowerCase(),
-        pr.brand.toLocaleLowerCase()
-      );
-    });
-
-    if (searchList.length < 1) {
-      resultFound.textContent = `${searchList.length} results found`;
-      searchResultBox.classList.remove("none");
-    } else {
-      resultFound.textContent = `${searchList.length} results found`;
-      console.log(searchList);
-      searchResults.textContent = "";
-      searchList.forEach((pr) => {
-        displayProducts(pr, searchResults);
-      });
-      clickEachProducts(searchResults);
-    }
-    searchResultBox.classList.remove("none");
+    SearchProducts(searchInput.value);
+    obj.clickedProduct(searchResults);
   }
 });
 
@@ -172,4 +180,31 @@ function searchIt(input, description, brands) {
   return eve;
 }
 
-console.log("tiMMy".toLocaleLowerCase());
+async function SearchProducts(searchIpunt) {
+  try {
+    searchSpiner.classList.remove("none");
+    const res = await fetch(
+      `https://dummyjson.com/products/search?q=${searchIpunt}`
+    );
+    if (!res.ok) {
+      throw new Error(`Something went wrong`);
+    }
+
+    const data = await res.json();
+    console.log(data);
+    if (data.products.length < 1) {
+      throw new Error(`No result found`);
+    }
+
+    resultFound.textContent = `${data.products.length} results found`;
+
+    data.products.forEach((result) => {
+      obj.displayProducts(result, searchResults);
+    });
+  } catch (err) {
+    searchResultBox.textContent = err.message;
+  } finally {
+    searchResultBox.classList.remove("none");
+    searchSpiner.classList.add("none");
+  }
+}

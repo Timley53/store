@@ -218,6 +218,9 @@ subPurchase.addEventListener("click", function (e) {
   window.webpayCheckout(samplePaymentRequest);
   */
 
+  /*
+
+
   ///=========paystack
 
   // const paymentForm = document.getElementById("paymentForm");
@@ -250,9 +253,10 @@ subPurchase.addEventListener("click", function (e) {
     handler.openIframe();
   }
 
+  */
+
   //======-----=====flutterwave
 
-  /*
   function makePayment() {
     FlutterwaveCheckout({
       public_key: "FLWPUBK_TEST-e92beb29b38f7ffe8d6f54ab67b467c9-X",
@@ -278,6 +282,4 @@ subPurchase.addEventListener("click", function (e) {
     });
   }
   makePayment();
-
-  */
 });

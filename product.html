@@ -12,6 +12,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- <script defer src="https://checkout.flutterwave.com/v3.js"></script>
+     -->
+
+    <script defer src="https://js.paystack.co/v1/inline.js"></script>
+
+    <!-- <script defer src="https://webpay-ui.k8.isw.la/inline-checkout.js"></script> -->
+
     <script src="E-storeGlobal.js" defer></script>
     <!-- <script defer src="./GlobalData.js"></script> -->
     <script defer src="./product.js"></script>
@@ -20,7 +28,7 @@
   <body>
     <div class="container">
       <nav>
-        <div class="logo"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class="logo">Timley</i></div>
         <ul class="nav-lists">
           <li class="nav-list">
             <a href="./index.html" class="active" id="">Home</a>
@@ -168,7 +176,7 @@
           <h4>My Account</h4>
 
           <a href="#">Sign In</a>
-          <a href="#">View Cart</a>
+          <a href="./cart.html">View Cart</a>
           <a href="#">My Wishlist</a>
           <a href="#">Track My Order</a>
           <a href="#">Help</a>
@@ -181,6 +189,49 @@
       </p>
 
       <div class="overlay none"></div>
+
+      <div class="payment-overlay none">
+        <div class="modal">
+          <button class="close-modal">X</button>
+          <form action="" method="post">
+            <label for="fulname">fullname:</label>
+
+            <input
+              type="text"
+              placeholder="Fullname"
+              class="fullname"
+              required
+            />
+
+            <label for="email">email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="email"
+              placeholder="Input correct email"
+              required
+            />
+
+            <label for="phoneNumber">phone: </label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              id="phoneNumber"
+              class="phoneNumber"
+              required
+              placeholder="phone number"
+            />
+            <br />
+            Payment Value:<span class="payment-value"> </span>
+            <br />
+
+            <button type="submit" class="sub-purchase">
+              Submit and Purchase
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

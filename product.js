@@ -14,6 +14,27 @@ const awaitProduct2 = document.querySelector(".await-product2");
 const categoryDisplay = document.querySelector(".category-display");
 const addProCart = document.querySelector(".cart");
 const prQuantity = document.querySelector(".quantity");
+const paymentValue = document.querySelector(".payment-value");
+const subPurchase = document.querySelector(".sub-purchase");
+const email = document.querySelector(".email");
+const fullname = document.querySelector(".fullname");
+const phoneNumber = document.querySelector(".phoneNumber");
+const closeModal = document.querySelector(".close-modal");
+const paymentOverlay = document.querySelector(".payment-overlay");
+const buyNow = document.querySelector(".buy-now");
+
+function modalOpenClose() {
+  paymentOverlay.classList.toggle("none");
+}
+
+buyNow.addEventListener("click", function () {
+  modalOpenClose();
+  paymentValue.textContent = `    $${product.price * +prQuantity.value}`;
+});
+closeModal.addEventListener("click", function () {
+  modalOpenClose();
+});
+
 // const awaitProduct = document.querySelector(".await-product");
 /*
 const rightBtn = document.querySelector(".right-btn");
@@ -153,4 +174,110 @@ obj.clickedProduct(categoryDisplay);
 addProCart.addEventListener("click", function (e) {
   obj.addToCart(memory.clickedProductsId, product.price, +prQuantity.value);
   console.log("add");
+});
+paymentValue.textContent = `    $${product.price * +prQuantity.value}`;
+// body - cut;
+
+function randomReference() {
+  let length = 10;
+  let chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let result = "";
+  for (let i = length; i > 0; --i)
+    result += chars[Math.floor(Math.random() * chars.length)];
+  return result;
+}
+
+console.log();
+subPurchase.addEventListener("click", function (e) {
+  // if (!phoneNumber) return;
+  // if (!fullname) return;
+  // if (!email) return;
+
+  if (!email.value || !phoneNumber.value || !fullname.value) {
+    return;
+  }
+
+  /*
+  //declare callback function
+  function paymentCallback(response) {
+    console.log(response);
+  }
+
+  //sample payment request
+  let samplePaymentRequest = {
+    merchant_code: "MX007",
+    pay_item_id: "101007",
+    txn_ref: "sample_txn_ref_123",
+    amount: 10000,
+    currency: 566, // ISO 4217 numeric code of the currency used
+    onComplete: paymentCallback,
+    mode: "TEST",
+  };
+
+  //call webpayCheckout to initiate the payment
+  window.webpayCheckout(samplePaymentRequest);
+  */
+
+  ///=========paystack
+
+  // const paymentForm = document.getElementById("paymentForm");
+
+  // paymentForm.addEventListener("submit", payWithPaystack, false);
+
+  function payWithPaystack(e) {
+    // e.preventDefault();
+    pk_test_ecfaf2b440fe1b7ecb7e1bf7183d69456b489162;
+
+    let handler = PaystackPop.setup({
+      key: "pk_test_ecfaf2b440fe1b7ecb7e1bf7183d69456b489162",
+      // Replace with your public key
+      email: email.value,
+      currency: "USD",
+      amount: product.price * +prQuantity.value * 100,
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1),
+
+      // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      // label: "Optional string that replaces customer email"
+      onClose: function () {
+        alert("Window closed.");
+      },
+      callback: function (response) {
+        let message = "Payment complete! Reference: " + response.reference;
+        alert(message);
+      },
+    });
+
+    handler.openIframe();
+  }
+
+  //======-----=====flutterwave
+
+  /*
+  function makePayment() {
+    FlutterwaveCheckout({
+      public_key: "FLWPUBK_TEST-e92beb29b38f7ffe8d6f54ab67b467c9-X",
+      tx_ref: `timley-${randomReference()}`,
+      amount: product.price * +prQuantity.value,
+      currency: "USD",
+      payment_options: "card, banktransfer, ussd",
+      redirect_url: "https://glaciers.titanic.com/handle-flutterwave-payment",
+      meta: {
+        consumer_id: 23,
+        consumer_mac: "92a3-912ba-1192a",
+      },
+      customer: {
+        email: email.value,
+        phone_number: phoneNumber.value,
+        name: fullname.value,
+      },
+      customizations: {
+        title: "Timley e-Store",
+        description: "Product Purchase Payment",
+        logo: "",
+      },
+    });
+  }
+  makePayment();
+
+  */
 });

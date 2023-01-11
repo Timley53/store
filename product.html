@@ -13,14 +13,15 @@
       referrerpolicy="no-referrer"
     />
 
-    <script defer src="https://checkout.flutterwave.com/v3.js"></script>
     
 
     <!-- <script defer src="https://js.paystack.co/v1/inline.js"></script> -->
 
     <!-- <script defer src="https://webpay-ui.k8.isw.la/inline-checkout.js"></script> -->
 
-    <script src="E-storeGlobal.js" defer></script>
+    <script defer  src="https://checkout.flutterwave.com/v3.js"></script>
+
+    <script defer src="E-storeGlobal.js" ></script>
     <!-- <script defer src="./GlobalData.js"></script> -->
     <script defer src="./product.js"></script>
     <title>Products</title>
@@ -28,7 +29,7 @@
   <body>
     <div class="container">
       <nav>
-        <div class="logo">Timley</i></div>
+        <a href="./index.html" class="logo">Timley</i></a>
         <ul class="nav-lists">
           <li class="nav-list">
             <a href="./index.html" class="active" id="">Home</a>
@@ -50,7 +51,7 @@
       <header class="product-header">
         <div class="failed-fetch none"></div>
 
-        <div class="await-product">
+        <div class="await-product2" id="await-product2">
           <div class="spiner"></div>
         </div>
         <div class="product-img-display">
@@ -134,7 +135,7 @@
 
       <section class="category-display">
         <div class="failed-fetch2 none"></div>
-        <div class="await-product2">
+        <div class="await-product2 none">
           <div class="spiner"></div>
         </div>
         <!-- <button class="slide-btn right-btn">
@@ -233,5 +234,6 @@
         </div>
       </div>
     </div>
+
   </body>
 </html>

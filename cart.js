@@ -166,6 +166,11 @@ class CartApp extends StoreApp {
           products: this.cart,
         }),
       });
+      console.log(res);
+
+      if (res.status === 400) {
+        throw new Error(`Cart Empty🛒😓`);
+      }
 
       if (!res.ok) {
         throw new Error(`Error: ${res.status}`);

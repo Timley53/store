@@ -10,7 +10,7 @@ const ProductPrice = document.querySelector(".Product-d-price");
 const productHeader = document.querySelector(".product-header");
 const imgList = document.querySelectorAll(".img-lists img");
 const failedFetch2 = document.querySelector(".failed-fetch2");
-const awaitProduct2 = document.querySelector(".await-product2");
+const awaitProduct2 = document.querySelectorAll(".await-product2");
 const categoryDisplay = document.querySelector(".category-display");
 const addProCart = document.querySelector(".cart");
 const prQuantity = document.querySelector(".quantity");
@@ -165,8 +165,10 @@ imgList.forEach((img) => {
 obj.otherCategories(product, memory, categoryDisplay);
 
 setTimeout(() => {
-  awaitProduct.classList.add("none");
-  awaitProduct2.classList.add("none");
+  // awaitProduct.classList.add("none");
+  awaitProduct2.forEach((awp) => {
+    awp.classList.add("none");
+  });
 }, 1500);
 
 obj.clickedProduct(categoryDisplay);
@@ -188,6 +190,7 @@ function randomReference() {
 }
 
 console.log();
+
 subPurchase.addEventListener("click", function (e) {
   // if (!phoneNumber) return;
   // if (!fullname) return;

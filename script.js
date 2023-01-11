@@ -72,7 +72,7 @@ async function getHomeProducts() {
     failedFetch.textContent = `${err}, reload`;
     failedFetch?.classList.remove("none");
   } finally {
-    awaitProduct?.classList.toggle("none");
+    // awaitProduct?.classList.add("none");
   }
 }
 

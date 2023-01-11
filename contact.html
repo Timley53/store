@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="contact.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -26,8 +26,9 @@
           <li class="nav-list">
             <a href="./shop.html" class="active">Shop</a>
           </li>
-          <li class="nav-list"><a href="#" id="active">Blog</a></li>
-          <li class="nav-list"><a href="./contact.html">Contact</a></li>
+          <li class="nav-list"><a href="./blog.html">Blog</a></li>
+          <li class="nav-list"><a href="">About</a></li>
+          <li class="nav-list"><a href="#" id="active">Contact</a></li>
           <li class="nav-list">
             <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
@@ -39,52 +40,39 @@
       </nav>
 
       <header>
-        <div class="img"></div>
+        <h2>Please fill this form</h2>
+        <form action="">
+          <label for="fullname"
+            >Fullname
+            <br />
+            <input type="text" class="Fullname" name="fullname" />
+          </label>
+          <br />
+          <label for="email"
+            >Email
+            <br />
+            <input type="email" name="email" id="email" class="email" />
+          </label>
 
-        <h2>We bring you all you need affordably and with comfort</h2>
+          <br />
+          <label for="comment"
+            >Comment
+            <br />
 
-        <p>
-          At Timley, we create pathways to connect millions of buyers in more
-          than 190 markets around the world. Our technology empowers our
-          customers, providing everyone the opportunity to grow and thrive — no
-          matter who they are or where they are in the world. And the ripple
-          effect of our work creates waves of change for our customers, our
-          company, our communities and our planet.
-        </p>
+            <textarea
+              name="comment"
+              id=""
+              cols="30"
+              rows="10"
+              class="comment"
+              placeholder="Please fill in How we can make shopping more easier and fun for you"
+            ></textarea>
+          </label>
+
+          <button class="submit">Submit</button>
+        </form>
       </header>
 
-      <section>
-        <div class="about__card">
-          <img src="./images/Untitled design (45).png" alt="" />
-          <div class="card__details">
-            Swift shopping, We offer all our customers fast and easy shopping.
-            <br />
-            Browse around the shop
-            <br />
-            <a href="./shop.html"> Shop Now</a>
-          </div>
-        </div>
-        <div class="about__card">
-          <img src="./images/Untitled design (46).png" alt="" />
-          <div class="card__details">
-            Swift shopping, We offer all our customers fast and easy shopping.
-            <br />
-            Browse around the shop
-            <br />
-            <a href="./shop.html"> Shop Now</a>
-          </div>
-        </div>
-        <div class="about__card">
-          <img src="./images/Untitled design (47).png" alt="" />
-          <div class="card__details">
-            Make payments online with ease We take all international cards
-            <br />
-            Browse around the shop
-            <br />
-            <a href="./shop.html"> Shop Now</a>
-          </div>
-        </div>
-      </section>
       <footer>
         <div class="fot-col-1 fot-col">
           <img src="./images/TImley-removebg-preview.png" alt="" />

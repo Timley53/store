@@ -97,49 +97,6 @@ nav .nav-list a::after {
   /* width: 100%; */
 }
 
-header {
-  width: 100%;
-  /* height: 40px; */
-  /* border: 1px solid red; */
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.img {
-  width: 100%;
-  height: 300px;
-  background: url("./images/Untitled\ design\ \(44\).png");
-  opacity: 0.7;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* padding: 0.5rem; */
-}
-header p {
-  text-align: center;
-  width: 80%;
-}
-section {
-  display: 70%;
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.about__card {
-  width: 35%;
-  text-align: left;
-}
-.about__card img {
-  width: 80%;
-  margin: 1rem 0;
-}
-.card__details {
-  width: 75%;
-}
-
 @keyframes width {
   0% {
     width: 0%;
@@ -147,6 +104,56 @@ section {
   100% {
     width: 100%;
   }
+}
+
+header {
+  margin-top: 8rem;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form {
+  width: 400px;
+  border: 1px solid rgb(95, 109, 117);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 3rem 1rem;
+  margin: 2rem 0;
+}
+
+form label {
+  width: 90%;
+}
+form label input {
+  width: 90%;
+  margin: 0.2rem 0;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+}
+form textarea {
+  width: 95%;
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+}
+form textarea:focus-within {
+  outline: none;
+}
+.submit {
+  width: 90%;
+  padding: 0.6rem 0.4rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #3d9816;
+  color: white;
+  border: none;
 }
 
 footer {
@@ -298,51 +305,55 @@ footer {
     background-color: #38761d;
     /* width: 100%; */
   }
-
   header {
-    width: 100%;
-    /* height: 40px; */
-    /* border: 1px solid red; */
-    margin-top: 3rem;
+    margin-top: 6rem;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
   }
-  .img {
-    width: 100%;
-    height: 300px;
-    background: url("./images/Untitled\ design\ \(44\).png");
-    opacity: 0.7;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* padding: 0.5rem; */
-  }
-  header p {
-    text-align: center;
-    width: 80%;
-  }
-  section {
-    display: 70%;
-    margin: 1rem;
+  form {
+    width: 90%;
+    border: 1px solid rgb(95, 109, 117);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    padding: 3rem 1rem;
   }
-  .about__card {
-    width: 85%;
-    margin: 0.8rem 0;
-    text-align: left;
+
+  form label {
+    width: 90%;
   }
-  .about__card img {
-    width: 80%;
-    margin: 1rem 0;
+  form label input {
+    width: 95%;
+    margin: 0.2rem 0;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid gray;
   }
-  .card__details {
-    width: 75%;
+  form textarea {
+    width: 95%;
+    border-radius: 0.5rem;
+    border: 1px solid gray;
+    margin: 0.2rem 0;
+    padding: 0.5rem;
   }
+  form textarea:focus-within {
+    outline: none;
+  }
+  .submit {
+    width: 90%;
+    padding: 0.6rem 0.4rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #3d9816;
+    color: white;
+    border: none;
+  }
+
   footer {
     display: flex;
     justify-content: space-between;

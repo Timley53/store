@@ -9,7 +9,7 @@ const body = document.querySelector("body");
 const iMgcont = document.querySelector(".js");
 const featured = document.querySelector(".featured");
 const failedFetch = document.querySelector(".failed-fetch");
-const awaitProduct = document.querySelector(".await-product");
+const awaitProduct = document.querySelectorAll(".await-product");
 const newArrivals = document.querySelector(".new-arrivals");
 const cartAdded = document.querySelector(".cart-added");
 
@@ -228,7 +228,9 @@ class StoreApp {
       failedFetch.textContent = `${err}, reload`;
       failedFetch?.classList.remove("none");
     } finally {
-      awaitProduct?.classList.remove("none");
+      // awaitProduct?.classList.remove("none");
+
+      awaitProduct.forEach((awp) => awp.classList.add("none"));
       //   console.log(this.allProducts);
     }
   }
@@ -265,6 +267,7 @@ class StoreApp {
 
   getSaved(varElement) {
     memory = JSON.parse(localStorage.getItem(`memory`));
+    if (!memory) return;
 
     console.log(memory);
 

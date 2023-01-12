@@ -773,7 +773,7 @@ footer {
     margin-top: 5.6rem;
     background-image: none;
 
-    height: 76vh;
+    height: 70vh;
 
     color: black;
     display: flex;
@@ -784,6 +784,7 @@ footer {
     /* border: 1px solid blue; */
     padding: 4;
     width: 100%;
+    background-color: white !important;
   }
   header * {
     margin-left: 0;
@@ -802,9 +803,9 @@ footer {
     /* width: 40%; */
     /* z-index: 10; */
     background-image: url("./images/pexels-albert-bilousov-12471301-removebg-preview.png");
-    background-position: left 7rem top -4rem;
+    background-position: left 4rem top 1rem;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 53vh;
 
     text-align: left;
   }
@@ -874,21 +875,26 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
     padding-top: 3rem;
     background-color: whitesmoke;
     padding-bottom: 3rem;
   }
   .illus {
-    width: 30%;
+    width: 90px;
     text-align: center;
     margin: 1rem;
     border: 1px solid rgba(178, 163, 163, 0.473);
     border-radius: 1rem;
     padding: 0.4rem;
   }
+  .section-1 > .first__child {
+    margin-left: 10rem;
+  }
+
   .illus img {
-    width: 100%;
+    width: 90px;
   }
   .illus:hover {
     box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.433);
